@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="How Infinity Market Backups accesses, uses, stores, and manages backup data and Google Drive authorization.">
+  <meta name="color-scheme" content="dark">
+  <title>Privacy policy · Infinity Market Backups</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">∞</span><span>Infinity Market Backups</span></a>
+    <nav aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="privacy.html" aria-current="page">Privacy</a>
+      <a href="https://github.com/InfinityGGHQ/infinity-backup-info/issues">Support</a>
+    </nav>
+  </header>
+  <main id="main" class="policy">
+    <header class="policy-heading"><p class="eyebrow">Infinity Market Backups</p><h1>Privacy policy</h1><p class="muted">Last updated: 18 November 2026</p></header>
+    <section><h2>Purpose and operator</h2><p>Infinity Market Backups is a private utility operated by the owner of Infinity Market. Its purpose is to create recoverable backups of the operator's market database and configuration and to store encrypted copies in the Google Drive account authorized by the operator. It is intended for the owner and their authorized administration, with no public account registration.</p></section>
+    <section><h2>Google data and permissions</h2><p>The utility requests the Google Drive OAuth scope <code>https://www.googleapis.com/auth/drive.file</code>. It uses this permission to create its backup folder and files and to access the contents and metadata of its own backup files for upload, listing, integrity checks, recovery, and operator-directed management.</p><p>File metadata can include names, identifiers, sizes, timestamps, and checksums. The utility's configured workflow does not browse or copy unrelated files in the operator's Google Drive.</p></section>
+    <section><h2>Backup contents and encryption</h2><p>Backup archives can contain database records and private application configuration. Database records may include Discord user identifiers, profile information, sales and payment records, application settings, stored images, audit records, and pending application jobs. Configuration can include application credentials.</p><p>The offsite workflow encrypts these archives with <code>age</code> on the operator's server before uploading them to Google Drive. The operator holds the private recovery key separately. Google Drive receives the encrypted archive; descriptive filenames, sizes, and upload times remain visible as file metadata.</p><p>Local database backups and temporary files used to prepare an archive are protected by filesystem access controls. Local copies can contain unencrypted data and are accessible to the server operator and authorized system administrators.</p></section>
+    <section><h2>Authorization credentials</h2><p>OAuth credentials used for unattended Google Drive access are stored privately on the operator's server with restricted filesystem permissions. They are used to authenticate backup operations and refresh access when permitted. They are not included in the public website or source repository and are not intentionally published or shared.</p></section>
+    <section><h2>Use and sharing</h2><p>Google user data is used only to perform the backup, integrity verification, recovery, and file-management functions described here. The utility does not sell this data, use it for advertising, or use it to train general-purpose artificial intelligence models.</p><p>The server hosting provider and Google Drive provide the infrastructure used by the operator. Google stores uploaded encrypted files under the operator's Google account. The utility does not intentionally make backups public or share them with other Drive users. Access granted separately by the account owner is controlled through that account's sharing settings.</p><p>Infinity Market Backups' use and transfer of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including its Limited Use requirements.</p></section>
+    <section><h2>Retention and deletion</h2><p>The current local backup schedule retains the latest 14 successfully verified copies. Cloud archives are retained until the operator deletes them or a configured retention rule removes them. Cloud retention is controlled by the operator's backup configuration.</p><p>The operator can delete cloud archives through Google Drive. Files in Drive's trash remain subject to Google's trash and retention behavior until permanently deleted. Deleting a cloud archive does not delete a separate local copy. Copies downloaded or shared separately by the operator must be managed at their respective locations.</p></section>
+    <section><h2>Revoking Google access</h2><p>The account owner can revoke authorization through <a href="https://myaccount.google.com/connections">Google Account connections</a> and disable the backup schedule on the server. Revocation stops future authorized Drive operations after the revocation takes effect. It does not automatically remove existing cloud archives or local backups.</p></section>
+    <section><h2>This informational website</h2><p>These static pages contain no sign-in form, upload form, analytics script, advertising, or tracking cookies added by the utility. The hosting provider may process ordinary request information, such as IP addresses and browser information, when serving the pages under its own privacy practices.</p></section>
+    <section><h2>Questions and updates</h2><p>Contact the operator through the <a href="https://github.com/InfinityGGHQ/infinity-backup-info/issues">Infinity Market Backups support page</a>. Public support requests should not include credentials, recovery keys, database records, or backup archives. The operator will update this policy when the utility's data practices change.</p></section>
+  </main>
+  <footer class="site-footer"><p>Operated by Infinity Market · Personal use</p><p><a href="index.html">Home</a><span aria-hidden="true"> · </span><a href="https://github.com/InfinityGGHQ/infinity-backup-info/issues">Support</a></p></footer>
+</body>
+</html>
